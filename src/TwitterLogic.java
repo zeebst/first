@@ -1,3 +1,5 @@
+// und jetzt kommt der test #
+
 
         	public String getTotal(Status status){
         		
