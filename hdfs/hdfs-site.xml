@@ -1,0 +1,125 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+
+<!-- Put site-specific property overrides in this file. -->
+
+<configuration>
+
+  <property>
+    <!-- The default block size for new files. Overrides default 64MB. -->
+    <name>dfs.blocksize</name>
+    <value>134217728</value><!-- 128MB -->
+  </property>
+
+  <property>
+    <!-- The number of server threads for the namenode. Overrides default 10. -->
+    <name>dfs.namenode.handler.count</name>
+    <value>64</value>
+  </property>
+
+  <property>
+    <!-- Number of threads the datanode node will use to handle IPC requests. 
+         Overrides default 3. -->
+    <name>dfs.datanode.handler.count</name>
+    <value>10</value>
+  </property>
+
+  <property>
+    <!-- The upper bound on the number of files a datanode will serve at the same 
+         time, set to 4096 as required by Hbase at minimal. A lower value can result
+         in known problems as described in Hbase trouble shooting wiki page. 
+         Overrides default 256. -->
+    <name>dfs.datanode.max.transfer.threads</name>
+    <value>8192</value>
+  </property>
+    
+  <property>
+    <!-- The option for dfs append support. -->
+    <name>dfs.support.append</name>
+    <value>true</value>
+  </property>
+  
+  <property>
+    <!-- Default block replication. -->
+    <name>dfs.replication</name>
+    <value>1</value>
+  </property>
+  
+  <property>
+    <name>dfs.webhdfs.enabled</name>
+  	<value>true</value>
+  </property>
+
+  <property>
+    <!-- Enable short-circuit local read. -->
+    <name>dfs.client.read.shortcircuit</name>
+    <value>true</value>
+  </property>
+
+  <property>
+    <!-- Path to a UNIX domain socket that will be used for communication between
+         the DataNode and local HDFS clients. -->
+    <name>dfs.domain.socket.path</name>
+    <value>/var/run/hadoop/dn._PORT</value>
+  </property>
+
+  <property>
+    <!-- Timeout (in seconds) for the parallel RPCs made in
+         DistributedFileSystem#getFileBlockStorageLocations. -->
+    <name>dfs.client.file-block-storage-locations.timeout</name>
+    <value>3000</value>
+  </property>
+
+  <property>
+    <name>dfs.cluster.administrators</name>
+    <value>biadmin,console,hdfs</value>
+  </property>
+  <property>
+    <name>dfs.datanode.address</name>
+    <value>192.168.126.129:50010</value>
+  </property>
+  <property>
+    <name>dfs.datanode.data.dir</name>
+    <value>/hadoop/hdfs/data</value>
+  </property>
+  <property>
+    <name>dfs.datanode.http.address</name>
+    <value>192.168.126.129:50075</value>
+  </property>
+  <property>
+    <name>dfs.datanode.ipc.address</name>
+    <value>192.168.126.129:50020</value>
+  </property>
+  <property>
+    <name>dfs.name.dir</name>
+    <value>/hadoop/hdfs/name</value>
+  </property>
+  <property>
+    <name>dfs.namenode.http-address</name>
+    <value>bivm.ibm.com:50070</value>
+  </property>
+  <property>
+    <name>dfs.namenode.secondary.http-address</name>
+    <value>bivm.ibm.com:50090</value>
+  </property>
+  <property>
+    <name>dfs.permissions.superusergroup</name>
+    <value>biadmin</value>
+  </property>
+  <property>
+    <name>dfs.support.broken.append</name>
+    <value>true</value>
+  </property>
+  <property>
+    <name>dfs.web.ugi</name>
+    <value>biadmin,biadmin</value>
+  </property>
+  <property>
+    <name>dfs.datanode.du.reserved</name>
+    <value>2899102925</value>
+  </property>
+  <property>
+    <name>dfs.hosts</name>
+    <value>/opt/ibm/biginsights/hadoop-conf/includes</value>
+  </property>
+</configuration>
